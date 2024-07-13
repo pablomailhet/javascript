@@ -167,9 +167,9 @@ function mostrarTotal(){
         const totalIva = (totalSinIva * iva)/100;
         const totalConIva = totalSinIva + totalIva;
 
-        let strAlert = "----------------------------------------------------------------------------------\n";
+        let strAlert = "------------------------------------------------------------------\n";
         strAlert +=    "DETALLE COMPRA:\n";
-        strAlert +=    "----------------------------------------------------------------------------------\n";
+        strAlert +=    "------------------------------------------------------------------\n";
         for(let i=0;i<productosCarrito.length;i++){
             strAlert += productosCarrito[i].categoria + " - " + productosCarrito[i].nombre + " - Precio: $" + productosCarrito[i].precio.toFixed(1) + " - Cant: " + productosCarrito[i].cantidad + " - Subtotal: $" + productosCarrito[i].subtotal.toFixed(1) + "\n";
         }
