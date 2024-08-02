@@ -1,163 +1,107 @@
-const categorias = [
-    {
-        id:1,
-        nombre:"Motores"
-    },
-    {
-        id:2,
-        nombre:"Variadores"
-    },
-    {
-        id:3,
-        nombre:"Helice"
+class Categoria{
+    constructor(id,nombre){
+        this.id = id;
+        this.nombre = nombre;
     }
+    toString(){
+        return this.id + " - " + this.nombre;
+    }
+}
+
+class Producto{
+    constructor(id,nombre,precio,idCategoria){
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.idCategoria = idCategoria;
+    }
+    toString(){
+        return this.id + " - " + this.nombre + " $" + this.precio;
+    }
+}
+
+class ProductoCarrito{
+    constructor(id,nombre,precio,idCategoria,cantidad){
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.idCategoria = idCategoria;
+        this.cantidad = cantidad;
+        this.categoria = obtenerCategoriaPorId(this.idCategoria).nombre;        
+    }
+    subtotal(){
+        return parseFloat(this.precio) * this.cantidad;
+    }
+    toString(){
+        return this.categoria + " - " + this.nombre + " - Precio: $" + this.precio.toFixed(1) + " - Cant: " + this.cantidad + " - Subtotal: $" + this.subtotal().toFixed(1);
+    }    
+}
+
+const categorias = [
+    new Categoria(1,"Motores"),
+    new Categoria(2,"Variadores"),
+    new Categoria(3,"Helice")
 ];
 
 const productos = [
-    {
-        id:1,
-        nombre:"Motor 5010 360KV",
-        precio:10.30,
-        idCategoria:1
-    },
-    {
-        id:2,
-        nombre:"Motor 3550 1200KV",
-        precio:13.50,
-        idCategoria:1
-    },  
-    {
-        id:3,
-        nombre:"Motor 2212 1400KV",
-        precio:15.20,
-        idCategoria:1
-    },       
-    {
-        id:4,
-        nombre:"ESC 3s 30amp",
-        precio:20.50,
-        idCategoria:2
-    },
-    {
-        id:5,
-        nombre:"ESC 4s 45amp",
-        precio:22.40,
-        idCategoria:2
-    },   
-    {
-        id:6,
-        nombre:"ESC 6s 60amp",
-        precio:42.10,
-        idCategoria:2
-    },      
-    {
-        id:7,
-        nombre:"Helice 8x4",
-        precio:4.20,
-        idCategoria:3
-    },
-    {
-        id:8,
-        nombre:"Helice 9x6",
-        precio:5.60,
-        idCategoria:3
-    },         
-    {
-        id:9,
-        nombre:"Helice 10x6",
-        precio:6.30,
-        idCategoria:3
-    }    
+    new Producto(1,"Motor 5010 360KV",10.3,1),
+    new Producto(2,"Motor 3550 1200KV",13.5,1),
+    new Producto(3,"Motor 2212 1400KV",15.2,1),
+    new Producto(4,"ESC 3s 30amp",20.5,2),
+    new Producto(5,"ESC 4s 45amp",22.4,2),
+    new Producto(6,"ESC 6s 60amp",42.1,2),
+    new Producto(7,"Helice 8x4",4.2,3),
+    new Producto(8,"Helice 9x6",5.6,3),
+    new Producto(9,"Helice 10x6",6.3,3)
 ];
 
-let productosCarrito;
+let productosCarrito = [];
 
 const iva = 10.5;
 
 function obtenerCategoriaPorId(id){
-    for(let i=0;i<categorias.length;i++){
-        if(id===categorias[i].id){
-            return categorias[i];
-        }
-    }
+   return categorias.find(categoria => categoria.id === id);
 }
 
-function obtenerProductoPorId(id,idCategoria){
-    for(let i=0;i<productos.length;i++){
-        if(id===productos[i].id && idCategoria===productos[i].idCategoria){
-            return productos[i];
-        }
-    }
+function obtenerProductoPorIdProductoPorIdCategoria(id,idCategoria){
+    return productos.find(producto => producto.id === id && producto.idCategoria === idCategoria);  
 }
 
 function obtenerProductosPorIdCategoria(idCategoria){
-    let productosProCategoria = [];
-    for(let i=0;i<productos.length;i++){
-        if(idCategoria===productos[i].idCategoria){
-            productosProCategoria.push(productos[i]);
-        }
-    }   
-    return productosProCategoria;
+    return productos.filter(producto => producto.idCategoria === idCategoria);  
 }
 
 function obtenerCategorias(){
-    let strCategorias = "";
-    for(let i=0; i<categorias.length;i++){
-        strCategorias += categorias[i].id + " - " + categorias[i].nombre + "\n";
-    }
-    return strCategorias;
+    return categorias.reduce((strCategoria,categoria) => strCategoria + categoria.toString() + "\n", "");
 }
 
 function obtenerProductos(productos){
-    let strProductos = "";
-    for(let i=0;i<productos.length;i++){
-        strProductos += obtenerProducto(productos[i]);
-    }     
-    return strProductos;
-}
-
-function obtenerProducto(producto){
-    return producto.id + " - " + producto.nombre + " $" + producto.precio + "\n";
+    return productos.reduce((strProducto,producto) => strProducto + producto.toString() + "\n", "");
 }
 
 function agregarAlCarrito(producto,cantidad){
 
-    let existe = false;
-    for(let i=0;i<productosCarrito.length;i++){
-        if(productosCarrito[i].id === producto.id){
-            existe = true;
-            productosCarrito[i].cantidad += cantidad;
-            productosCarrito[i].subtotal = productosCarrito[i].precio * productosCarrito[i].cantidad;
-        }
+    if(productosCarrito.some(productoCarrito => productoCarrito.id === producto.id)){
+        const itemIndex = productosCarrito.findIndex(productoCarrito => productoCarrito.id === producto.id);
+        productosCarrito[itemIndex].cantidad += cantidad;
     }
-    if(!existe){
-        let productoCarrito = {
-            id: producto.id,
-            nombre: producto.nombre,
-            categoria: obtenerCategoriaPorId(producto.idCategoria).nombre,
-            precio: producto.precio,
-            cantidad: cantidad,
-            subtotal: parseFloat(producto.precio) * cantidad
-        };
+    else{
+        let productoCarrito = new ProductoCarrito(producto.id,producto.nombre,producto.precio,producto.idCategoria,cantidad);
         productosCarrito.push(productoCarrito);
     }
 
-    console.log("----------------------------------Carrito-----------------------------------------");
-    mostrarCarrito();    
+    mostrarCarrito();
 
 }
 
 function calcularTotal(){
-    let total = 0;
-    for(let i=0;i<productosCarrito.length;i++){
-        total += productosCarrito[i].subtotal;
-    }
-    return total;
+    return productosCarrito.reduce((total,productoCarrito) => total + productoCarrito.subtotal(), 0);
 }
 
 function mostrarCarrito(){
+    console.log("---------------------------Carrito----------------------------");
     for(let i=0;i<productosCarrito.length;i++){
-        console.log(productosCarrito[i].categoria + " - " + productosCarrito[i].nombre + " - Precio: $" + productosCarrito[i].precio.toFixed(1) + " - Cant: " + productosCarrito[i].cantidad + " - Subtotal: $" + productosCarrito[i].subtotal.toFixed(1));
+        console.log(productosCarrito[i].toString());
     }
 }
 
@@ -171,7 +115,7 @@ function mostrarTotal(){
         strAlert +=    "DETALLE COMPRA:\n";
         strAlert +=    "--------------------------------------------------------------\n";
         for(let i=0;i<productosCarrito.length;i++){
-            strAlert += productosCarrito[i].categoria + " - " + productosCarrito[i].nombre + " - Precio: $" + productosCarrito[i].precio.toFixed(1) + " - Cant: " + productosCarrito[i].cantidad + " - Subtotal: $" + productosCarrito[i].subtotal.toFixed(1) + "\n";
+            strAlert += productosCarrito[i].toString() + "\n";
         }
         strAlert += "Total sin IVA: $" + totalSinIva.toFixed(1) + "\n";
         strAlert += "IVA: " + iva + "% $" + (totalIva.toFixed(1)) + "\n";
@@ -205,12 +149,12 @@ function iniciarCompra(){
                 if(idProducto===0){
                     break;
                 }
-                producto = obtenerProductoPorId(idProducto,idCategoria);
+                producto = obtenerProductoPorIdProductoPorIdCategoria(idProducto,idCategoria);
                 if(producto!==undefined){
 
                     let cantidad;
                     do{
-                        cantidad = parseInt(prompt(categoria.nombre + ":\n" + obtenerProducto(producto) + "Ingrese la cantidad a comprar:"));
+                        cantidad = parseInt(prompt(categoria.nombre + ":\n" + producto.toString() + "\n" + "Ingrese la cantidad a comprar:"));
 
                     } while(isNaN(cantidad) );
 
