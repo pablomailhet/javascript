@@ -235,7 +235,6 @@ footer:hover {
   border-color: rgb(62, 83, 104);
 }
 
-
 .carrito{
   align-items: center;
   justify-content: center;
@@ -244,35 +243,7 @@ footer:hover {
   width: 100%;
   text-align: center;
 }
-.carritoColProducto{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.carritoSubtotalMonto{
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content:end;
-}
-.carritoTotal{
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content:center;  
-  font-weight: bold;
-  height: 25px;
-  margin-right: 0px;
-  padding-right: 0px;
 
-}
-.carritoTotalMonto{
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content:center;
-  font-weight: bold;
-}
 .imgCarrito{
   height: 30px;
 }
@@ -284,7 +255,6 @@ footer:hover {
 .carritoBtnConfirmar{
   max-width: 200px;
 }
-
 
 @media (max-width: 991px) {
   h1 {
