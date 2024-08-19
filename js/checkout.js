@@ -92,7 +92,7 @@ const actualizarCarrito = () => {
 
         const divColProducto = document.createElement("div");
         divColProducto.className = "col-6 d-flex align-items-center justify-content-end";
-        divColProducto.innerHTML = `<span>Total del carrito</span>`;
+        divColProducto.innerHTML = `<span class="carritoBtnQuitar">Total del carrito</span>`;
         divRow.append(divColProducto);
 
         let totalCarrito = productosCarrito.reduce((total,productoCarrito) => total + productoCarrito.subTotal, 0);
@@ -102,7 +102,7 @@ const actualizarCarrito = () => {
         });         
         const divColSubTotal = document.createElement("div");
         divColSubTotal.className = "col-2 d-flex align-items-center justify-content-end";
-        divColSubTotal.innerHTML = `<span>$${totalCarrito}</span>`;
+        divColSubTotal.innerHTML = `<span class="carritoBtnQuitar">$${totalCarrito}</span>`;
         divRow.append(divColSubTotal);
 
         const divColBtnVaciar = document.createElement("div");
