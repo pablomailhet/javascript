@@ -57,6 +57,7 @@ const mostrarProductos = () => {
             divCategoria.append(h2);
             divCategoria.append(divProductos);
             sectionProductos.append(divCategoria);
+            
         }
     });
 }

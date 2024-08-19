@@ -3,17 +3,17 @@ const showToast = (text,avatar,color,urlOnClick) => {
         text: text,
         duration: 3000,
         close: false,
-        gravity: "bottom",
+        gravity: "top",
         position: "right",
         stopOnFocus: true,
         style: {
             background: color || "green"
         },
         avatar: avatar,
-        onClick: function() {
-            if(urlOnClick){
-                window.location.href = urlOnClick;
-            }
+        destination: urlOnClick || "",
+        offset:{
+            x: 0,
+            y: 40,
         }
     }).showToast();
 }

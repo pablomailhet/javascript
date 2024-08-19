@@ -5,16 +5,24 @@ const quitarProductoDelCarrito = productoCarrito => {
         const itemIndex = productosCarrito.findIndex(prod => prod.id === productoCarrito.id);
         productosCarrito.splice(itemIndex, 1);
         showToast(productoCarrito.nombre + " se quitó del carrito.",productoCarrito.image.url,"red");
-        actualizarCarrito();        
+        actualizarCarrito();
+        if(productosCarrito.length==0){
+            setTimeout(()=>{
+                window.location.href = "productos.html";
+            }, 1000);
+        }
     });
 };
 
 const vaciarCarrito = () => {
-    swalFireQuestion("¿Está seguro que desea vaciar el carrito?","",()=>{
+    const cantidadCarrito = productosCarrito.reduce((cantTotal,productoCarrito) => cantTotal + productoCarrito.cantidad, 0);
+    swalFireQuestion("¿Está seguro que desea vaciar el carrito?",`Se quitarán ${cantidadCarrito} productos del carrito.`,()=>{
         productosCarrito.splice(0, productosCarrito.length);
         showToast("Se vació el carrito.","","red");
         actualizarCarrito();
-        window.location.href = "productos.html";          
+        setTimeout(()=>{
+            window.location.href = "productos.html";
+        }, 1000);        
     });
 }
 

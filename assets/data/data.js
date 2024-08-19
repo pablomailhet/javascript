@@ -181,7 +181,6 @@ const arrayProductos = [
         },        
         precio:82
     },
-
     {
         id:9,
         idCategoria:3,
@@ -226,7 +225,6 @@ const arrayProductos = [
         },        
         precio:82
     },
-
     {
         id:13,
         idCategoria:4,
@@ -359,12 +357,6 @@ const arrayProductos = [
         },        
         precio:24.95
     },
-
-
-
-
-
-
     {
         id:25,
         idCategoria:7,
@@ -409,12 +401,6 @@ const arrayProductos = [
         },        
         precio:12.99
     },    
-
-
-
-
-
-
     {
         id:29,
         idCategoria:8,

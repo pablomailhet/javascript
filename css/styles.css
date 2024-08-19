@@ -283,7 +283,6 @@ footer:hover {
   .cardProducto {
     padding-top: 0px;
     padding-bottom: 10px;
-    flex-direction: column-reverse;
     width: auto;
     max-width: 40%;
     margin: 10px;
