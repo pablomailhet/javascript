@@ -244,20 +244,24 @@ footer:hover {
   text-align: center;
 }
 
+.carritoTexto{
+  font-size: 1.5rem;
+}
+
+.carritoTextoBold{
+  font-weight: bold;
+}
+
 .imgCarrito{
   height: 30px;
 }
 
 .carritoBtnQuitar{
-  font-weight: bold;
-}
-
-.carritoTotal{
-  width: 50px;
+  font-size: 1.2rem;
 }
 
 .carritoBtnConfirmar{
-  max-width: 200px;
+  font-size: 1.5rem;
 }
 
 @media (max-width: 991px) {

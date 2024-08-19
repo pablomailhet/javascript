@@ -37,14 +37,14 @@ const actualizarCarrito = () => {
             divColProducto.className = "col-5 flex-column align-items-center justify-content-start";
             divColProducto.innerHTML = `
                 <img src="${productoCarrito.image.url}" alt="${productoCarrito.image.alt}" class="imgCarrito">
-                <span>${productoCarrito.nombre}</span>
+                <span class="carritoTexto">${productoCarrito.nombre}</span>
             `;
             divRow.append(divColProducto);
 
             const divColCantidad = document.createElement("div");
             divColCantidad.className = "col-1 d-flex align-items-center justify-content-end";
             const cantidadProducto = document.createElement("input");
-            cantidadProducto.className = "";
+            cantidadProducto.className = "carritoTexto";
             cantidadProducto.type = "number";
             cantidadProducto.min = 1;
             cantidadProducto.max = 10;
@@ -70,7 +70,7 @@ const actualizarCarrito = () => {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2
             });            
-            divColSubTotal.innerHTML = `<span>$${subTotal}</span>`;
+            divColSubTotal.innerHTML = `<span class="carritoTexto">$${subTotal}</span>`;
             divRow.append(divColSubTotal);
 
             const divColBtnQuitar = document.createElement("div");
@@ -92,7 +92,7 @@ const actualizarCarrito = () => {
 
         const divColProducto = document.createElement("div");
         divColProducto.className = "col-6 d-flex align-items-center justify-content-end";
-        divColProducto.innerHTML = `<span class="carritoBtnQuitar">Total del carrito</span>`;
+        divColProducto.innerHTML = `<span class="carritoTexto carritoTextoBold">Total del carrito</span>`;
         divRow.append(divColProducto);
 
         let totalCarrito = productosCarrito.reduce((total,productoCarrito) => total + productoCarrito.subTotal, 0);
@@ -102,7 +102,7 @@ const actualizarCarrito = () => {
         });         
         const divColSubTotal = document.createElement("div");
         divColSubTotal.className = "col-2 d-flex align-items-center justify-content-end";
-        divColSubTotal.innerHTML = `<span class="carritoBtnQuitar">$${totalCarrito}</span>`;
+        divColSubTotal.innerHTML = `<span class="carritoTexto carritoTextoBold">$${totalCarrito}</span>`;
         divRow.append(divColSubTotal);
 
         const divColBtnVaciar = document.createElement("div");
