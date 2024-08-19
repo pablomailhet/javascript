@@ -249,6 +249,10 @@ footer:hover {
 }
 
 .carritoBtnQuitar{
+  font-weight: bold;
+}
+
+.carritoTotal{
   width: 50px;
 }
 
