@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RcParts Hacenos tu consulta y te damos el asesoramiento que necesitas">
+    <meta name="keywords" content="RcParts, rc, radio control, aeromodelismo, hobby"/>
+    <title>RcParts | Contacto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="navBarBrand">
+                    <h1>Contacto</h1>
+                </div>                           
+                <button class="navbar-toggler navBarToggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarApp" aria-controls="navbarApp" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon navBarTogglerIcon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarApp">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link navLink" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link navLink" href="./nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link navLink" href="./productos.html">Productos</a></li>
+                        <li class="nav-item"><a class="nav-link navLink" href="./preguntasfrecuentes.html">Preguntas Frecuentes</a></li>
+                        <li class="nav-item"><a class="nav-link navLink navLinkActive" href="#">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link navLink" href="./checkout.html"><i id="cart" class="bi bi-cart"></i></a></li> 
+                    </ul>
+                </div>
+            </div>
+        </nav>         
+    </header>
+    <main class="container text-center mb-5">
+        <section class="row justify-content-center mt-3">
+            <div class="col-12">
+                <h2>Dejanos tu consulta</h2>
+            </div>
+        </section>
+        <section class="row justify-content-center">
+            <form id="frmContacto" class="col" action="" method="post" enctype="">
+                <div class="row formRow">
+                    <div class="col-lg-6 col-md-12">
+                        <label for="nombre" class="form-label formLabel">Nombre</label>
+                        <input type="text" class="form-control formControl" name="nombre" id="nombre" placeholder="Ingrese su nombre" required>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <label for="apellido" class="form-label formLabel">Apellido</label>
+                        <input type="text" class="form-control formControl" name="apellido" id="apellido" placeholder="Ingrese su apellido" required>
+                    </div>
+                </div>
+                <div class="row formRow">
+                    <div class="col-lg-6 col-md-12">
+                        <label for="email" class="form-label formLabel">Email</label>
+                        <input type="email" class="form-control formControl" name="email" id="email" placeholder="Ingrese un email" required>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <label for="telefono" class="form-label formLabel">Telefono</label>
+                        <input type="text" class="form-control formControl" name="telefono" id="telefono" placeholder="Ingrese un telefono">
+                    </div>
+                </div>
+                <div class="row formRow">
+                    <div class="col">
+                        <label for="asunto" class="form-label formLabel">Asunto</label>
+                        <input type="text" class="form-control formControl" name="asunto" id="asunto" placeholder="Ingrese un asunto" required>
+                    </div>  
+                </div>
+                <div class="row formRow">
+                    <div class="col">
+                        <label for="mensaje" class="form-label formLabel">Mensaje</label>
+                        <textarea class="form-control formControl" name="mensaje" id="mensaje" rows="7" required></textarea>                    
+                    </div>
+                </div>
+                <div class="row formRow text-center">
+                    <div class="col">
+                        <button type="submit" class="btn formButton">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="d-flex justify-content-center">
+            <a href="https://www.facebook.com/" target="_blank"><i class="bi-facebook facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="bi-instagram instagram"></i></a>
+            <a href="https://wa.me/" target="_blank"><i class="bi-whatsapp whatsapp"></i></a>
+        </div>
+    </footer>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/swalFire.js"></script>
+    <script src="../js/navBarCart.js"></script>
+    <script src="../js/contacto.js"></script>
+</body>
+</html>
