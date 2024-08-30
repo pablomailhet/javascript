@@ -30,7 +30,6 @@ const cargarMenu = () => {
 
 const mostrarMenu = (arrMenu) => {
     const currentPath = document.location.pathname;
-    const basePath = currentPath.substring(0,currentPath.lastIndexOf('/'));
     const currentFile = currentPath.substring(currentPath.lastIndexOf('/')+1);
     const navbar = document.querySelector("#navbar-nav");
     arrMenu.forEach(({link,nombre}) => {
@@ -45,12 +44,11 @@ const mostrarMenu = (arrMenu) => {
             a.classList.add("navLinkActive");
         }
         else{
-            if(basePath===""){
-                //href = link.indexOf('/')>-1 ? "./" + link : link;
-                href = "./" + link;
+            if(currentPath.indexOf('pages/')>-1){
+                href = "../" + link;
             }
             else{
-                href = link.indexOf('/')>-1 ? "./" + file : "../" + link;
+                href = "./" + link;
             }
         }
         a.href = href;
