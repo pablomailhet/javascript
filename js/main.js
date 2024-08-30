@@ -1,5 +1,5 @@
 const cargarCarousel = () => {
-    fetch("/assets/data/carousel.json")
+    fetch("./assets/data/carousel.json")
     .then((resp) => resp.json())
     .then((data) => {
         mostrarCarousel(data);
@@ -7,13 +7,13 @@ const cargarCarousel = () => {
 };
 
 const cargarGrupos = async () => {
-    const resp = await fetch("/assets/data/grupos.json");
+    const resp = await fetch("./assets/data/grupos.json");
     const data = await resp.json();
     return data;
 };
 
 const cargarCategorias = async () => {
-     const resp = await fetch("/assets/data/categorias.json");
+     const resp = await fetch("./assets/data/categorias.json");
      const data = await resp.json();
      return data;
 };
