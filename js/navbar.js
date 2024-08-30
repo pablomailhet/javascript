@@ -13,6 +13,8 @@ const actualizarCart = () => {
 };
 
 const cargarMenu = () => {
+    const currentPath = document.location.pathname;
+    console.log(currentPath);
     fetch("../assets/data/navbaritems.json")
     .then((resp) => resp.json())
     .then((data) => {
