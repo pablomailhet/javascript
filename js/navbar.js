@@ -13,7 +13,7 @@ const actualizarCart = () => {
 };
 
 const cargarMenu = () => {
-    fetch("/assets/data/navbaritems.json")
+    fetch("./assets/data/navbaritems.json")
     .then((resp) => resp.json())
     .then((data) => {
         mostrarMenu(data);
