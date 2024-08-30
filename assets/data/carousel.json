@@ -1,0 +1,29 @@
+[
+    {
+        "id":1,
+        "nombre":"Talon GT",
+        "descripcion":"Wingspan: 1100mm - Length: 660mm",
+        "image":{
+            "url":"./assets/img/portada/dartxl02.jpg",
+            "alt":"imagen de un avión rc volando entre las sierras"
+        }
+    },
+    {
+        "id":2,
+        "nombre":"Dart XL",
+        "descripcion":"Wingspan: 1000mm - Length: 596mm",
+        "image":{
+            "url":"./assets/img/portada/dartxl01.jpg",
+            "alt":"imagen de un avión rc volando arriba de un lago"
+        }
+    },
+    {
+        "id":3,
+        "nombre":"Nano Talon",
+        "descripcion":"Wingspan: 860mm - Length: 570mm",
+        "image":{
+            "url":"./assets/img/portada/dartxl03.jpg",
+            "alt":"imagen de un avión rc volando a mar abierto"
+        }
+    }
+]

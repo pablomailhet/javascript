@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "idGrupo": 1,
+        "tag": "motores",
+        "nombre": "Motores Brushless",
+        "image": {
+            "url": "./assets/img/categoria/motores.jpg",
+            "alt": ""
+        }
+    },
+    {
+        "id": 2,
+        "idGrupo": 1,
+        "tag": "esc",
+        "nombre": "ESC",
+        "image": {
+            "url": "./assets/img/categoria/esc.jpg",
+            "alt": ""
+        }
+    },
+    {
+        "id": 3,
+        "idGrupo": 1,
+        "tag": "propellers",
+        "nombre": "Propellers",
+        "image": {
+            "url": "./assets/img/categoria/propellers.jpg",
+            "alt": ""
+        }
+    },
+    {
+        "id": 4,
+        "idGrupo": 1,
+        "tag": "fc",
+        "nombre": "Flight Controllers",
+        "image": {
+            "url": "./assets/img/categoria/fc.jpg",
+            "alt": ""
+        }
+    },
+    {
+        "id": 5,
+        "idGrupo": 2,
+        "tag": "goggles",
+        "nombre": "Gafas",
+        "image": {
+            "url": "./assets/img/categoria/goggles.jpg",
+            "alt": ""
+        }
+    },
+    {
+        "id": 6,
+        "idGrupo": 2,
+        "tag": "vtx",
+        "nombre": "Transmisores de video",
+        "image": {
+            "url": "./assets/img/categoria/vtx.jpg",
+            "alt": ""
+        }
+    },
+    {
+        "id": 7,
+        "idGrupo": 2,
+        "tag": "camera",
+        "nombre": "Camaras",
+        "image": {
+            "url": "./assets/img/categoria/camera.jpg",
+            "alt": ""
+        }
+    },
+    {
+        "id": 8,
+        "idGrupo": 2,
+        "tag": "antenna",
+        "nombre": "Antenas",
+        "image": {
+            "url": "./assets/img/categoria/antenna.jpg",
+            "alt": ""
+        }
+    }
+]

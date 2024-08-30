@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "nombre":"Inicio",
+        "link":"index.html"
+    },
+    {
+        "id":2,
+        "nombre":"Nosotros",
+        "link":"pages/nosotros.html"
+    },
+    {
+        "id":3,
+        "nombre":"Productos",
+        "link":"pages/productos.html"
+    },
+    {
+        "id":4,
+        "nombre":"Preguntas Frecuentes",
+        "link":"pages/preguntasfrecuentes.html"
+    },
+    {
+        "id":5,
+        "nombre":"Contacto",
+        "link":"pages/contacto.html"
+    },
+    {
+        "id":6,
+        "nombre":"<i id=\"cart\" class=\"bi bi-cart\"></i>",
+        "link":"pages/checkout.html"
+    }
+]
