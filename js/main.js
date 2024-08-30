@@ -1,7 +1,50 @@
-const main = document.querySelector("#main");
+const cargarCarousel = () => {
+    fetch("/assets/data/carousel.json")
+    .then((resp) => resp.json())
+    .then((data) => {
+        mostrarCarousel(data);
+    });    
+};
 
-const mostrarGrupos = () => {
+const cargarGrupos = async () => {
+    const resp = await fetch("/assets/data/grupos.json");
+    const data = await resp.json();
+    return data;
+};
+
+const cargarCategorias = async () => {
+     const resp = await fetch("/assets/data/categorias.json");
+     const data = await resp.json();
+     return data;
+};
+
+const mostrarCarousel = (arrayCarousel) => {
+    const carouselInner = document.querySelector("#carouselInner");
+    let blnEsPrimero = true
+    arrayCarousel.forEach(carouselItem => {
+        const divCarouselItem = document.createElement("div");
+        divCarouselItem.className = "carousel-item";
+        if(blnEsPrimero){
+            divCarouselItem.classList.add("active");
+            blnEsPrimero = false;
+        }
+        divCarouselItem.innerHTML = `
+            <img src="${carouselItem.image.url}" alt="${carouselItem.image.alt}" class="d-block w-100">
+            <div class="carousel-caption d-none d-md-block carouselCaption">
+                <h3>${carouselItem.nombre}</h3>
+                <p>${carouselItem.descripcion}</p>
+            </div>            
+        `;
+        carouselInner.append(divCarouselItem);
+    });
+};
+
+const mostrarGrupos = async () => {
+    const main = document.querySelector("#main");
+    const arrayGrupos = await cargarGrupos();
+    const arrayCategorias = await cargarCategorias();
     arrayGrupos.forEach(grupo => {
+
         const arrayCategoriasPorGrupo = arrayCategorias.filter(categoria => categoria.idGrupo === grupo.id);
         if(arrayCategoriasPorGrupo.length>0){
             const section = document.createElement("section");
@@ -26,7 +69,10 @@ const mostrarGrupos = () => {
             section.innerHTML = html;
             main.append(section);
         }
+
     });
 };
 
+cargarMenu();
+cargarCarousel();
 mostrarGrupos();

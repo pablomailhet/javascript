@@ -16,4 +16,4 @@ const showToast = (text,avatar,color,urlOnClick) => {
             y: 40,
         }
     }).showToast();
-}
+};

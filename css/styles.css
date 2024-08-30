@@ -58,23 +58,28 @@ footer {
   transition: filter 0.5s;
   background: radial-gradient(circle at 50.3% 44.5%, rgb(221, 221, 221) 0%, rgb(116, 147, 179) 100.2%);
 }
+
 footer i {
   padding: 15px;
   color: #202020;
   font-size: 3rem;
   transition: color 0.5s;
 }
+
 footer i:hover.facebook {
   color: #3b5998;
 }
+
 footer i:hover.instagram {
   background: -webkit-linear-gradient(#833ab4, #fd1d1d, #fcb045);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 footer i:hover.whatsapp {
   color: green;
 }
+
 footer:hover {
   filter: brightness(110%);
 }
@@ -97,6 +102,36 @@ footer:hover {
   margin: 0px;
 }
 
+.cardCategoriaFiltro {
+  width: 200px;
+  margin: 15px;
+  border-radius: 10px 10px 0px 10px;
+  box-shadow: 2px 2px 2px silver;
+  transition: box-shadow 0.5s;
+}
+
+.cardCategoriaFiltro:hover{
+  cursor: pointer;
+  box-shadow: 5px 5px 15px gray;
+}
+
+.cardCategoriaFiltroSelect{
+  box-shadow: 5px 5px 15px rgb(95, 154, 95) !important;
+}
+
+.cardBodyCategoriaFiltro {
+  padding: 1px;
+}
+
+.imgFiltroCategorias{
+  width: 50px;
+}
+
+.cardTitleFiltroCategorias {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
 .cardProducto {
   width: 300px;
   margin: 15px;
@@ -104,13 +139,16 @@ footer:hover {
   box-shadow: 2px 2px 2px silver;
   transition: box-shadow 0.5s;
 }
+
 .cardProducto:hover {
   box-shadow: 5px 5px 15px gray;
 }
+
 .cardProducto:hover img {
   transform: scale(1.05);
   filter: brightness(150%);
 }
+
 .cardProducto img {
   transition: transform 0.5s, filter 1s;
   animation-name: imgOnStart;
@@ -127,9 +165,11 @@ footer:hover {
     transform: scale(1);
   }
 }
+
 .navBarBrand {
   white-space: normal;
 }
+
 .navBarBrand h1 {
   margin: 5px;
 }
@@ -140,6 +180,7 @@ footer:hover {
   color: #F0F0F0;
   margin: 5px;
 }
+
 .navLink:hover {
   color: white;
   text-shadow: 1px 0px 0px white;
@@ -158,6 +199,7 @@ footer:hover {
   border-color: white;
   color: white;
 }
+
 .navBarToggler .navBarTogglerIcon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(255, 255, 255)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
@@ -169,6 +211,7 @@ footer:hover {
   background-color: transparent;
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
+
 .carouselCaption p {
   font-size: 2rem;
   font-family: "monospace";
@@ -212,10 +255,12 @@ footer:hover {
   border-radius: 10px 10px 0px 10px;
   border-color: rgb(62, 83, 104);
 }
+
 .formControl:focus {
   border-color: rgb(11, 80, 94);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 10px silver;
 }
+
 .formControl::placeholder {
   color: #AAAAAA;
 }
@@ -229,6 +274,7 @@ footer:hover {
   border-radius: 10px 10px 0px 10px;
   width: 150px;
 }
+
 .formButton:hover {
   color: white;
   background-color: rgb(62, 83, 104);
@@ -236,12 +282,20 @@ footer:hover {
 }
 
 .carrito{
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  width: 100%;
+  margin-bottom: 15px;
   text-align: center;
+}
+
+.carritoRow{
+  border-style: solid;
+  border-width: 1px;
+  border-color: silver;
+  border-radius: 10px 10px 0px 10px;
+  margin: 5px;
+}
+
+.carritoRowTotal{
+  background-color: #F0F0F0;
 }
 
 .carritoTexto{
@@ -252,8 +306,18 @@ footer:hover {
   font-weight: bold;
 }
 
+.carritoInput{
+  border-style: solid;
+  border-width: 1px;
+  border-color: silver;
+  border-radius: 10px 10px 0px 10px;
+  padding-left: 10px;
+  max-width: 70px;
+  height: 20px;
+}
+
 .imgCarrito{
-  height: 30px;
+  width: 30px;
 }
 
 .carritoBtnQuitar{
@@ -262,6 +326,17 @@ footer:hover {
 
 .carritoBtnConfirmar{
   font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.spanCarritoProducto{
+  font-size: 1.5rem;
+  color:chocolate;
+}
+
+.tituloDatosEnvio{
+  margin-top: 20px;
+  text-align: center;
 }
 
 @media (max-width: 991px) {

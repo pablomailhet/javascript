@@ -7,7 +7,7 @@ const swalFireError = msgError => {
             cancelButton: 'btn btn-secondary',
         }                           
     });
-}
+};
 
 const swalFireQuestion = (title,text,callBack) => {
     let swalFire = Swal.fire({
@@ -30,7 +30,7 @@ const swalFireQuestion = (title,text,callBack) => {
             }
         });
     }
-}
+};
 
 const swalFireInfo = (title,text,callBack) => {
     let swalFire = Swal.fire({
@@ -50,7 +50,7 @@ const swalFireInfo = (title,text,callBack) => {
             }
         });
     }
-}
+};
 
 const swalFireSuccess = (title,text,callBack) => {
     let swalFire = Swal.fire({
@@ -70,4 +70,4 @@ const swalFireSuccess = (title,text,callBack) => {
             }
         });
     }
-}
+};
