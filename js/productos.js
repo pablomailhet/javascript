@@ -2,13 +2,13 @@ const arrayFiltroCategoria = JSON.parse(localStorage.getItem("filtrocategoria"))
 let scrollTo = true;
 
 const cargarCategorias = async () => {
-    const resp = await fetch("./assets/data/categorias.json");
+    const resp = await fetch("/assets/data/categorias.json");
     const data = await resp.json();
     return data;
 };
 
 const cargarProductos = async () => {
-    const resp = await fetch("./assets/data/productos.json");
+    const resp = await fetch("/assets/data/productos.json");
     const data = await resp.json();
     return data;
 };
@@ -227,3 +227,6 @@ const agregarAlCarrito = (categoria,producto,cantidad) => {
 cargarMenu();
 mostrarFiltroCategorias();
 mostrarProductos();
+
+const currentPath = document.location.pathname;
+console.log(currentPath);
