@@ -14,8 +14,14 @@ const actualizarCart = () => {
 
 const cargarMenu = () => {
     const currentPath = document.location.pathname;
-    console.log(currentPath);
-    fetch("../assets/data/navbaritems.json")
+    let url = "assets/data/navbaritems.json";
+    if(currentPath.indexOf('pages/')>-1){
+        url = "../" + url;
+    }
+    else{
+        url = "./" + url;
+    }
+    fetch(url)
     .then((resp) => resp.json())
     .then((data) => {
         mostrarMenu(data);
