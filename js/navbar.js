@@ -46,7 +46,8 @@ const mostrarMenu = (arrMenu) => {
         }
         else{
             if(basePath===""){
-                href = link.indexOf('/')>-1 ? "./" + link : link;
+                //href = link.indexOf('/')>-1 ? "./" + link : link;
+                href = "./" + link;
             }
             else{
                 href = link.indexOf('/')>-1 ? "./" + file : "../" + link;
