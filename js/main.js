@@ -7,13 +7,13 @@ const cargarCarousel = () => {
 };
 
 const cargarGrupos = async () => {
-    const resp = await fetch("./assets/data/grupos.json");
+    const resp = await fetch("/assets/data/grupos.json");
     const data = await resp.json();
     return data;
 };
 
 const cargarCategorias = async () => {
-     const resp = await fetch("./assets/data/categorias.json");
+     const resp = await fetch("/assets/data/categorias.json");
      const data = await resp.json();
      return data;
 };
@@ -76,3 +76,6 @@ const mostrarGrupos = async () => {
 cargarMenu();
 cargarCarousel();
 mostrarGrupos();
+
+const currentPath = document.location.pathname;
+console.log(currentPath);
