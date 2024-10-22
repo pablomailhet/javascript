@@ -3,15 +3,12 @@
   margin: 0;
   padding: 0;
 }
-
 html {
   font-size: 62.5%;
 }
-
 header {
   background: radial-gradient(circle at 50.3% 44.5%, rgb(116, 147, 179) 0%, rgb(62, 83, 104) 100.2%);
 }
-
 body {
   background-color: white;
 }
